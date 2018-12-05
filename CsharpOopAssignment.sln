@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpOopAssignment", "CsharpOopAssignment\CsharpOopAssignment.csproj", "{85E18517-320B-4B38-803E-D47D41842A87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpOopAssignmentTests", "CsharpOopAssignmentTests\CsharpOopAssignmentTests.csproj", "{EBC2D343-3766-4EF6-AB48-F1A622E65144}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85E18517-320B-4B38-803E-D47D41842A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E18517-320B-4B38-803E-D47D41842A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E18517-320B-4B38-803E-D47D41842A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E18517-320B-4B38-803E-D47D41842A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBC2D343-3766-4EF6-AB48-F1A622E65144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC2D343-3766-4EF6-AB48-F1A622E65144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC2D343-3766-4EF6-AB48-F1A622E65144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC2D343-3766-4EF6-AB48-F1A622E65144}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
