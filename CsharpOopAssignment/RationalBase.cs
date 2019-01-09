@@ -81,7 +81,7 @@ namespace CsharpOopAssignment
          * @throws ArgumentException
          *             if that is null
          */
-        public RationalBase Mub(RationalBase that)
+        public RationalBase Sub(RationalBase that)
         {
             throw new NotImplementedException();
         }

@@ -13,7 +13,7 @@ namespace CsharpOopAssignment
          * @return the greatest common denominator, or shared factor, of `a` and `b`
          * @throws ArgumentException if a <= 0 or b < 0
          */
-        public static int gcd(int a, int b)
+        public static int Gcd(int a, int b)
         {
             throw new NotImplementedException();
         }
@@ -31,7 +31,7 @@ namespace CsharpOopAssignment
          * @return a two element array representation of the simplified numerator and denominator
          * @throws ArgumentException if the given denominator is 0
          */
-        public static int[] simplify(int numerator, int denominator)
+        public static int[] Simplify(int numerator, int denominator)
         {
             throw new NotImplementedException();
         }
@@ -49,7 +49,7 @@ namespace CsharpOopAssignment
          * @return a two element array representation of the simplified numerator and denominator
          * @throws ArgumentException if the given denominator is 0
          */
-        public SimplifiedRational()
+        public SimplifiedRational(int numerator, int denominator)
         {
             throw new NotImplementedException();
         }
