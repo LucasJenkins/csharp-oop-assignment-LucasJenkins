@@ -145,7 +145,7 @@ namespace CsharpOopAssignmentTests
         [MemberData("GenerateTwoRational", MemberType=typeof(SimplifiedRationalGenerator))]
         public void Sub(SimplifiedRational r1, SimplifiedRational r2)
         {
-            RationalBase result = r1.Add(r2);
+            RationalBase result = r1.Sub(r2);
             Assert.True(r1 != result && r2 != result);
             int n1 = r1.GetNumerator(), d1 = r1.GetDenominator(), n2 = r2.GetNumerator(), d2 = r2.GetDenominator();
             Assert.Equal(new SimplifiedRational(n1 * d2 - n2 * d1, d1 * d2), result);
@@ -162,7 +162,7 @@ namespace CsharpOopAssignmentTests
         [MemberData("GenerateTwoRational", MemberType=typeof(SimplifiedRationalGenerator))]
         public void Mul(SimplifiedRational r1, SimplifiedRational r2)
         {
-            RationalBase result = r1.Add(r2);
+            RationalBase result = r1.Mul(r2);
             Assert.True(r1 != result && r2 != result);
             int n1 = r1.GetNumerator(), d1 = r1.GetDenominator(), n2 = r2.GetNumerator(), d2 = r2.GetDenominator();
             Assert.Equal(new SimplifiedRational(n1 * n2, d1 * d2), result);
@@ -186,7 +186,7 @@ namespace CsharpOopAssignmentTests
         [MemberData("GenerateTwoRational", MemberType=typeof(SimplifiedRationalGenerator))]
         public void Div(SimplifiedRational r1, SimplifiedRational r2)
         {
-            RationalBase result = r1.Add(r2);
+            RationalBase result = r1.Div(r2);
             Assert.True(r1 != result && r2 != result);
             int n1 = r1.GetNumerator(), d1 = r1.GetDenominator(), n2 = r2.GetNumerator(), d2 = r2.GetDenominator();
             Assert.Equal(new Rational(n1 * d2, d1 * n2), result);
