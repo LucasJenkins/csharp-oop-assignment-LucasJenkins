@@ -4,7 +4,7 @@ You will work with an existing code base to implement an abstract class and two 
 
 ## Task List
 - [ ] Fork & Clone the assignment repository
-- [ ] Finish the implementation of the BaseRationa abstract class
+- [ ] Finish the implementation of the RationalBase abstract class
 - [ ] Implement the Rational class
 - [ ] Pass all test cases for the Rational class
 - [ ] Implement the SimplifiedRational class
