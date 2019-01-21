@@ -21,22 +21,6 @@ namespace CsharpOopAssignment
         }
 
         /**
-         * @return the numerator of this rational number
-         */
-        public override int GetNumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        /**
-         * @return the denominator of this rational number
-         */
-        public override int GetDenominator()
-        {
-            throw new NotImplementedException();
-        }
-
-        /**
 		 * Specialized constructor to take advantage of shared code between
 		 * Rational and SimplifiedRational
 		 * <p>

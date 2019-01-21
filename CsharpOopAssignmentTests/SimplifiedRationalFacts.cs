@@ -54,62 +54,71 @@ namespace CsharpOopAssignmentTests
         [MemberData("GenerateRational", MemberType=typeof(SimplifiedRationalGenerator))]
         public void ConstructorSuccess(SimplifiedRational rat, int n, int d)
         {
-            Assert.Equal(rat.GetNumerator(), n);
-            Assert.Equal(rat.GetDenominator(), d);
+            int[] expected = Collapse(n, d);
+
+            Assert.Equal(rat.Numerator, expected[0]);
+            Assert.Equal(rat.Denominator, expected[1]);
         }
         
         [Theory]
         [MemberData("GenerateRational", MemberType=typeof(SimplifiedRationalGenerator))]
-        public void ConstructFail(Rational rat)
+        public void ConstructFail(SimplifiedRational rat, int n, int d)
         {
-            Assert.Throws<ArgumentException>(() => rat.Construct(rat.GetNumerator(), 0));
+            Assert.Throws<ArgumentException>(() => rat.Construct(rat.Numerator, 0));
         }
         
         [Theory]
         [MemberData("GenerateRational", MemberType=typeof(SimplifiedRationalGenerator))]
         public void ConstructSuccess(SimplifiedRational r, int n, int d)
         {
-            int[] expected = Collapse(n, d);
-            
-            SimplifiedRational newR = (SimplifiedRational) r.Construct(r.GetNumerator(), r.GetDenominator());
+            SimplifiedRational newR = (SimplifiedRational)r.Construct(r.Numerator, r.Denominator);
             Assert.True(r != newR);
-            Assert.Equal(expected[0], newR.GetNumerator());
-            Assert.Equal(expected[1], newR.GetDenominator());
+            Assert.Equal(r.Numerator, newR.Numerator);
+            Assert.Equal(r.Denominator, newR.Denominator);
         }
         
         [Theory]
         [MemberData("GenerateRational", MemberType=typeof(SimplifiedRationalGenerator))]
-        public void CheckEquals(SimplifiedRational r1)
+        public void CheckEquals(SimplifiedRational r1, int n, int d)
         {
             Assert.NotNull(r1);
-            
-            RationalBase r2 = r1.Construct(r1.GetNumerator(), r1.GetDenominator()).Mul(r1.Construct(2, 2));
+
+            RationalBase r2 = r1.Construct(r1.Numerator, r1.Denominator).Mul(r1.Construct(2, 2));
             Assert.Equal(r1, r2);
 
-            RationalBase r3 = r2.Construct(r2.GetNumerator() * 3, r2.GetDenominator() * 5).Mul(r2.Construct(3, 5));
+            RationalBase r3 = r2.Construct(r2.Numerator * 3, r2.Denominator * 5).Mul(r2.Construct(3, 5));
             Assert.NotEqual(r1, r3);
             Assert.NotEqual(r2, r3);
         }
         
         [Theory]
         [MemberData("GenerateRational", MemberType=typeof(SimplifiedRationalGenerator))]
-        public void CheckToString(SimplifiedRational r)
+        public void CheckToString(SimplifiedRational r, int num, int den)
         {
-            int n = r.GetNumerator();
-            int d = r.GetDenominator();
+            int n = r.Numerator;
+            int d = r.Denominator;
 
             Assert.Equal((n < 0 != d < 0 ? "-" : "") + Math.Abs(n) + "/" + Math.Abs(d), r.ToString());
         }
-        
+
         [Theory]
-        [MemberData("GenerateRational", MemberType=typeof(SimplifiedRationalGenerator))]
-        public void Negate(SimplifiedRational r)
+        [MemberData("GenerateRational", MemberType = typeof(SimplifiedRationalGenerator))]
+        public void Negate(SimplifiedRational r, int n, int d)
         {
             RationalBase result = r.Negate();
             Assert.True(r != result);
-            Assert.Equal(new SimplifiedRational(-r.GetNumerator(), r.GetDenominator()), result);
+            Assert.Equal(new SimplifiedRational(-r.Numerator, r.Denominator), result);
         }
-        
+
+        [Theory]
+        [MemberData("GenerateRational", MemberType = typeof(SimplifiedRationalGenerator))]
+        public void Invert(SimplifiedRational r, int n, int d)
+        {
+            RationalBase result = r.Invert();
+            Assert.True(r != result);
+            Assert.Equal(new SimplifiedRational(r.Denominator, r.Numerator), result);
+        }
+
         [Theory]
         [MemberData("GenerateRational", MemberType=typeof(SimplifiedRationalGenerator))]
         public void InvertFail(SimplifiedRational r, int n, int d)
@@ -130,7 +139,7 @@ namespace CsharpOopAssignmentTests
         {
             RationalBase result = r1.Add(r2);
             Assert.True(r1 != result && r2 != result);
-            int n1 = r1.GetNumerator(), d1 = r1.GetDenominator(), n2 = r2.GetNumerator(), d2 = r2.GetDenominator();
+            int n1 = r1.Numerator, d1 = r1.Denominator, n2 = r2.Numerator, d2 = r2.Denominator;
             Assert.Equal(new SimplifiedRational(n1 * d2 + n2 * d1, d1 * d2), result);
         }
         
@@ -147,7 +156,7 @@ namespace CsharpOopAssignmentTests
         {
             RationalBase result = r1.Sub(r2);
             Assert.True(r1 != result && r2 != result);
-            int n1 = r1.GetNumerator(), d1 = r1.GetDenominator(), n2 = r2.GetNumerator(), d2 = r2.GetDenominator();
+            int n1 = r1.Numerator, d1 = r1.Denominator, n2 = r2.Numerator, d2 = r2.Denominator;
             Assert.Equal(new SimplifiedRational(n1 * d2 - n2 * d1, d1 * d2), result);
         }
         
@@ -164,7 +173,7 @@ namespace CsharpOopAssignmentTests
         {
             RationalBase result = r1.Mul(r2);
             Assert.True(r1 != result && r2 != result);
-            int n1 = r1.GetNumerator(), d1 = r1.GetDenominator(), n2 = r2.GetNumerator(), d2 = r2.GetDenominator();
+            int n1 = r1.Numerator, d1 = r1.Denominator, n2 = r2.Numerator, d2 = r2.Denominator;
             Assert.Equal(new SimplifiedRational(n1 * n2, d1 * d2), result);
         }
         
@@ -188,8 +197,8 @@ namespace CsharpOopAssignmentTests
         {
             RationalBase result = r1.Div(r2);
             Assert.True(r1 != result && r2 != result);
-            int n1 = r1.GetNumerator(), d1 = r1.GetDenominator(), n2 = r2.GetNumerator(), d2 = r2.GetDenominator();
-            Assert.Equal(new Rational(n1 * d2, d1 * n2), result);
+            int n1 = r1.Numerator, d1 = r1.Denominator, n2 = r2.Numerator, d2 = r2.Denominator;
+            Assert.Equal(new SimplifiedRational(n1 * d2, d1 * n2), result);
         }
         
     }

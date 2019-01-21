@@ -11,7 +11,7 @@ namespace CsharpOopAssignment
          * @param a the first value to consider
          * @param b the second value to consider
          * @return the greatest common denominator, or shared factor, of `a` and `b`
-         * @throws ArgumentException if a <= 0 or b < 0
+         * @throws ArgumentException if a <= 0 or b <= 0
          */
         public static int Gcd(int a, int b)
         {
@@ -50,22 +50,6 @@ namespace CsharpOopAssignment
          * @throws ArgumentException if the given denominator is 0
          */
         public SimplifiedRational(int numerator, int denominator)
-        {
-            throw new NotImplementedException();
-        }
-
-        /**
-         * @return the numerator of this rational number
-         */
-        public override int GetNumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        /**
-         * @return the denominator of this rational number
-         */
-        public override int GetDenominator()
         {
             throw new NotImplementedException();
         }

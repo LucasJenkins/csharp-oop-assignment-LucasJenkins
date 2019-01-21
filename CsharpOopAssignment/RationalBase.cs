@@ -4,13 +4,10 @@ namespace CsharpOopAssignment
 {
     public abstract class RationalBase
     {
-        /**
-         * @return the numerator of this rational number
-         */
-        public abstract int GetNumerator();
-
-        public abstract int GetDenominator();
-
+	    
+        public int Numerator { get; set; }
+		public int Denominator { get; set; }
+	    
         /**
 		 * Specialized constructor to take advantage of shared code between
 		 * Rational and SimplifiedRational
@@ -37,7 +34,7 @@ namespace CsharpOopAssignment
          */
         public RationalBase Negate()
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
 
         /**
