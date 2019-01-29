@@ -5,8 +5,8 @@ namespace CsharpOopAssignment
     public abstract class RationalBase
     {
 	    
-        public int Numerator { get; set; }
-		public int Denominator { get; set; }
+        public int Numerator { get; private set; }
+		public int Denominator { get; private set; }
 	    
         /**
 		 * Specialized constructor to take advantage of shared code between
