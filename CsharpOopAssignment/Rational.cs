@@ -4,20 +4,8 @@ namespace CsharpOopAssignment
 {
     public class Rational : RationalBase
     {
-        /**
-         * Constructor for rational values of the type:
-         * <p>
-         * `numerator / denominator`
-         * <p>
-         * No simplification of the numerator/denominator pair should occur in this method.
-         *
-         * @param numerator   the numerator of the rational value
-         * @param denominator the denominator of the rational value
-         * @throws ArgumentException if the given denominator is 0
-         */
-        public Rational(int numerator, int denominator) : base(numerator, denominator)
-        {
-        }
+        
+        public Rational(int numerator, int denominator) : base(numerator, denominator) { }
 
         /**
 		 * Specialized constructor to take advantage of shared code between
