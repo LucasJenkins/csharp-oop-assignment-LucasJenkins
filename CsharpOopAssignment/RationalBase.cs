@@ -50,7 +50,7 @@ namespace CsharpOopAssignment
          */
         public RationalBase Negate()
         {
-	        throw new NotImplementedException();
+	        return Construct(-Numerator, Denominator);
         }
 
         /**
@@ -64,7 +64,7 @@ namespace CsharpOopAssignment
 		 */
         public RationalBase Invert()
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
 
         /**
@@ -75,12 +75,12 @@ namespace CsharpOopAssignment
          * @param that
          *            the value to add to this
          * @return the sum of this and that
-         * @throws ArgumentException
+         * @throws InvalidOperationException
          *             if that is null
          */
         public RationalBase Add(RationalBase that)
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
 
         /**
@@ -91,12 +91,12 @@ namespace CsharpOopAssignment
          * @param that
          *            the value to subtract from this
          * @return the difference between this and that
-         * @throws ArgumentException
+         * @throws InvalidOperationException
          *             if that is null
          */
         public RationalBase Sub(RationalBase that)
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
 
         /**
@@ -107,12 +107,12 @@ namespace CsharpOopAssignment
          * @param that
          *            the value to multiply this by
          * @return the product of this and that
-         * @throws IllegalArgumentException
+         * @throws InvalidOperationException
          *             if that is null
          */
         public RationalBase Mul(RationalBase that)
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
 
         /**
@@ -123,12 +123,12 @@ namespace CsharpOopAssignment
 		 * @param that
 		 *            the value to divide this by
 		 * @return the ratio of this to that
-		 * @throws IllegalArgumentException
+		 * @throws InvalidOperationException
 		 *             if that is null or if the numerator of that is 0
 		 */
         public RationalBase Div(RationalBase that)
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
     }
 }

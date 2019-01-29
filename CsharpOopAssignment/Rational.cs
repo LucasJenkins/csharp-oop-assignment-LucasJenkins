@@ -17,7 +17,6 @@ namespace CsharpOopAssignment
          */
         public Rational(int numerator, int denominator) : base(numerator, denominator)
         {
-            throw new NotImplementedException();
         }
 
         /**
@@ -37,7 +36,7 @@ namespace CsharpOopAssignment
 		 */
         public override RationalBase Construct(int numerator, int denominator)
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
 
         /**
@@ -48,7 +47,7 @@ namespace CsharpOopAssignment
          */
         public override bool Equals(object obj)
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
 
         /**
@@ -60,7 +59,7 @@ namespace CsharpOopAssignment
          */
         public override string ToString()
         {
-            throw new NotImplementedException();
+	        throw new NotImplementedException();
         }
     }
 }
