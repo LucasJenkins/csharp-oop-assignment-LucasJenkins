@@ -50,7 +50,7 @@ namespace CsharpOopAssignment
          */
         public RationalBase Negate()
         {
-	        return Construct(-Numerator, Denominator);
+	        throw new NotImplementedException();
         }
 
         /**
