@@ -46,7 +46,6 @@ namespace CsharpOopAssignment
          *
          * @param numerator   the numerator of the rational value
          * @param denominator the denominator of the rational value
-         * @throws ArgumentException if the given denominator is 0
          */
         public SimplifiedRational(int numerator, int denominator) : base(numerator, denominator)
         {
