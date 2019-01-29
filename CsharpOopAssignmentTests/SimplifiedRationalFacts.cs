@@ -13,18 +13,18 @@ namespace CsharpOopAssignmentTests
         [MemberData("GenerateSingleInts", MemberType=typeof(SimplifiedRationalGenerator))]
         public void GcdFailA(int a)
         {
-            Assert.Throws<InvalidOperationException>(() => SimplifiedRational.Gcd(a, 0));
+            Assert.Throws<InvalidOperationException>(() => SimplifiedRational.Gcd(a < 0 ? a : -a, 0));
         }
         
         [Theory]
         [MemberData("GenerateSingleInts", MemberType=typeof(SimplifiedRationalGenerator))]
         public void GcdFailB(int b)
         {
-            Assert.Throws<InvalidOperationException>(() => SimplifiedRational.Gcd(0, b));
+            Assert.Throws<InvalidOperationException>(() => SimplifiedRational.Gcd(0, b < 0 ? b : -b));
         }
         
         [Theory]
-        [MemberData("GenerateDoubleInts", MemberType=typeof(SimplifiedRationalGenerator))]
+        [MemberData("GenerateDoubleIntsWithNonZero", MemberType=typeof(SimplifiedRationalGenerator))]
         public void GcdSuccess(int a, int b)
         {
             Assert.Equal(SimplifiedRational.Gcd(a, b), Euclid(a, b));
@@ -107,7 +107,7 @@ namespace CsharpOopAssignmentTests
         {
             RationalBase result = r.Negate();
             Assert.True(r != result);
-            Assert.Equal(new SimplifiedRational(-r.Numerator, r.Denominator), result);
+            Assert.Equal(new SimplifiedRational(-n, d), result);
         }
 
         [Theory]

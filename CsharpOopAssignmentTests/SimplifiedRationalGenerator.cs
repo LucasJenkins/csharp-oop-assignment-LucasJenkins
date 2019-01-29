@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using CsharpOopAssignment;
 
 namespace CsharpOopAssignmentTests
@@ -33,21 +34,26 @@ namespace CsharpOopAssignmentTests
                 Random random = new Random();
                 var n = getRandomInt();
                 var d = getRandomNonZeroInt();
-                list.Add(new object[] {new SimplifiedRational(n, d), n, d});
+                var simplified = Collapse(n, d);
+                list.Add(new object[] {new SimplifiedRational(simplified[0], simplified[1]), simplified[0], simplified[1]});
             }
 
             return list;
         }
 
-        public static IEnumerable<object[]> GenerateTwoRational() =>
-            new List<object[]>
+        public static IEnumerable<object[]> GenerateTwoRational()
+        {
+            List<object[]> rationals = GenerateRational() as List<object[]>;
+            return new List<object[]>
             {
-                new object[]
+                new[]
                 {
-                    new SimplifiedRational(getRandomInt(), getRandomNonZeroInt()),
-                    new SimplifiedRational(getRandomInt(), getRandomNonZeroInt())
+                    rationals.ToArray()[0][0],
+                    rationals.ToArray()[1][0]
                 }
             };
+        }
+            
 
         public static IEnumerable<object[]> GenerateSingleInts() =>
             new List<object[]>
