@@ -23,7 +23,7 @@ namespace CsharpOopAssignment
 	    {
 		    throw new NotImplementedException();
 	    }
-	    
+
         /**
 		 * Specialized constructor to take advantage of shared code between
 		 * Rational and SimplifiedRational
