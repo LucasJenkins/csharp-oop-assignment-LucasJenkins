@@ -5,8 +5,24 @@ namespace CsharpOopAssignment
     public abstract class RationalBase
     {
 	    
-        public int Numerator { get; set; }
-		public int Denominator { get; set; }
+        public int Numerator { get; protected set; }
+		public int Denominator { get; protected set; }
+	    
+	    /**
+         * Constructor for rational values of the type:
+         * <p>
+         * `numerator / denominator`
+         * <p>
+         * No simplification of the numerator/denominator pair should occur in this method.
+         *
+         * @param numerator   the numerator of the rational value
+         * @param denominator the denominator of the rational value
+         * @throws ArgumentException if the given denominator is 0
+         */
+	    public RationalBase(int numerator, int denominator)
+	    {
+		    throw new NotImplementedException();
+	    }
 	    
         /**
 		 * Specialized constructor to take advantage of shared code between

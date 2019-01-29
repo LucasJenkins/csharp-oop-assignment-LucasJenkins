@@ -37,19 +37,18 @@ namespace CsharpOopAssignment
         }
 
         /**
-         * Simplifies the numerator and denominator of a rational value.
+         * Constructor for rational values of the type:
          * <p>
-         * For example:
-         * `simplify(10, 100) = [1, 10]`
-         * or:
-         * `simplify(0, 10) = [0, 1]`
+         * `numerator / denominator`
+         * <p>
+         * Simplification of numerator/denominator pair should occur in this method.
+         * If the numerator is zero, no further simplification can be performed
          *
-         * @param numerator   the numerator of the rational value to simplify
-         * @param denominator the denominator of the rational value to simplify
-         * @return a two element array representation of the simplified numerator and denominator
+         * @param numerator   the numerator of the rational value
+         * @param denominator the denominator of the rational value
          * @throws ArgumentException if the given denominator is 0
          */
-        public SimplifiedRational(int numerator, int denominator)
+        public SimplifiedRational(int numerator, int denominator) : base(numerator, denominator)
         {
             throw new NotImplementedException();
         }

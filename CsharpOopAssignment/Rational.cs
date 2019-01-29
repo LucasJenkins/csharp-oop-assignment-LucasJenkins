@@ -15,7 +15,7 @@ namespace CsharpOopAssignment
          * @param denominator the denominator of the rational value
          * @throws ArgumentException if the given denominator is 0
          */
-        public Rational(int numerator, int denominator)
+        public Rational(int numerator, int denominator) : base(numerator, denominator)
         {
             throw new NotImplementedException();
         }
